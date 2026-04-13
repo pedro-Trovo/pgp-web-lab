@@ -16,7 +16,6 @@ Gerador de chaves PGP, criptografia e descriptografia de mensagens e arquivos - 
 - **Criptografar Arquivo** - Cifre arquivos usando a chave pública do destinatário
 - **Descriptografar Arquivo** - Decifre arquivos usando sua chave privada
 <h2 align="center">Tecnologias</h2>
-<h2 align="center">Tecnologias</h2>
 
 O **PGP Web Lab** foi desenvolvido como uma aplicação **100% client-side**, sem necessidade de backend.
 
