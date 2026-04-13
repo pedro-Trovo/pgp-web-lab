@@ -1,29 +1,36 @@
 <h1 align="center">PGP Web Lab</h1>
+
 <p align="center">
 <strong>Criptografia OpenPGP diretamente no navegador</strong><br>
 Gerador de chaves PGP, criptografia e descriptografia de mensagens e arquivos - 100% client-side.
 </p>
+
 <h2 align="center">Sobre o PGP Web Lab</h2>
-**PGP Web Lab** é uma ferramenta para criptografia de mensagens e arquivos utilizando o padrão **OpenPGP**.
+
+<strong>PGP Web Lab</strong> é uma ferramenta para criptografia de mensagens e arquivos utilizando o padrão <strong>OpenPGP</strong>.
+
 - Geração de pares de chaves PGP (públicas e privadas)
 - Criptografia e descriptografia de mensagens
 - Criptografia e descriptografia de arquivos
-- **Processamento 100% local** - suas chaves nunca saem do navegador
+- <strong>Processamento 100% local</strong> - suas chaves nunca saem do navegador
+
 <h2 align="center">Funcionalidades</h2>
-- **Gerar Chaves PGP** - Crie seu par de chaves pública/privada
-- **Criptografar Mensagem** - Cifre mensagens usando a chave pública do destinatário
-- **Descriptografar Mensagem** - Decifre mensagens usando sua chave privada
-- **Criptografar Arquivo** - Cifre arquivos usando a chave pública do destinatário
-- **Descriptografar Arquivo** - Decifre arquivos usando sua chave privada
+
+- <strong>Gerar Chaves PGP</strong> - Crie seu par de chaves pública/privada
+- <strong>Criptografar Mensagem</strong> - Cifre mensagens usando a chave pública do destinatário
+- <strong>Descriptografar Mensagem</strong> - Decifre mensagens usando sua chave privada
+- <strong>Criptografar Arquivo</strong> - Cifre arquivos usando a chave pública do destinatário
+- <strong>Descriptografar Arquivo</strong> - Decifre arquivos usando sua chave privada
+
 <h2 align="center">Tecnologias</h2>
 
-O **PGP Web Lab** foi desenvolvido como uma aplicação **100% client-side**, sem necessidade de backend.
+O <strong>PGP Web Lab</strong> foi desenvolvido como uma aplicação <strong>100% client-side</strong>, sem necessidade de backend.
 
-O **frontend** foi construído com **Angular 18**, utilizando **Bootstrap 5** para estilização e **Bootstrap Icons** para os ícones da interface.
+O <strong>frontend</strong> foi construído com <strong>Angular 18</strong>, utilizando <strong>Bootstrap 5</strong> para estilização e <strong>Bootstrap Icons</strong> para os ícones da interface.
 
-A **criptografia** é realizada inteiramente no navegador utilizando a biblioteca **OpenPGP.js**, garantindo que nenhuma chave privada seja enviada para servidores externos.
+A <strong>criptografia</strong> é realizada inteiramente no navegador utilizando a biblioteca <strong>OpenPGP.js</strong>, garantindo que nenhuma chave privada seja enviada para servidores externos.
 
-O **deploy** da aplicação é feito na **Vercel**, com build automatizado a partir do repositório GitHub.
+O <strong>deploy</strong> da aplicação é feito na <strong>Vercel</strong>, com build automatizado a partir do repositório GitHub.
 
 <table align="center">
   <tr>
@@ -105,13 +112,20 @@ O **deploy** da aplicação é feito na **Vercel**, com build automatizado a par
     </td>
   </tr>
 </table>
+
 <h2 align="center">Segurança</h2>
-Todo o processamento ocorre **exclusivamente no seu navegador**. Suas chaves privadas nunca são enviadas a servidores externos.
+
+Todo o processamento ocorre <strong>exclusivamente no seu navegador</strong>. Suas chaves privadas nunca são enviadas a servidores externos.
+
 <h2 align="center">Executando Localmente</h2>
+
 ```bash
 git clone https://github.com/pedro-Trovo/pgp-web-lab
 cd pgp-web-lab
 npm install
 npm start
-Acesse: http://localhost:4200
-<h2 align="center">License</h2>
+```
+Acesse: <code>http://localhost:4200</code>
+
+<h2 align="center">Licença</h2>
+Este projeto está sob a licença <strong>MIT</strong>. Consulte o arquivo <code>LICENSE</code> para mais informações.
