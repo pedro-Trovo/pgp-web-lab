@@ -42,7 +42,7 @@ export class OpenPGPService {
     
     const encrypted = await openpgp.encrypt({
       message,
-      encryptionKeys: publicKey
+      encryptionKeys: [publicKey]
     });
 
     return encrypted as string;
@@ -53,15 +53,16 @@ export class OpenPGPService {
     privateKeyArmored: string,
     passphrase: string
   ): Promise<string> {
-    const privateKey = await openpgp.decryptKey({
-      privateKey: await openpgp.readPrivateKey({ armoredKey: privateKeyArmored }),
-      passphrase
-    });
+    let privateKey = await openpgp.readPrivateKey({ armoredKey: privateKeyArmored });
+    
+    if (passphrase) {
+      privateKey = await openpgp.decryptKey({ privateKey, passphrase });
+    }
 
     const message = await openpgp.readMessage({ armoredMessage: encryptedMessage });
     const { data: decrypted } = await openpgp.decrypt({
       message,
-      decryptionKeys: privateKey
+      decryptionKeys: [privateKey]
     });
 
     return decrypted as string;
@@ -72,30 +73,31 @@ export class OpenPGPService {
     
     const encrypted = await openpgp.encrypt({
       message: await openpgp.createMessage({ binary: new Uint8Array(fileBuffer), filename }),
-      encryptionKeys: publicKey,
+      encryptionKeys: [publicKey],
       format: 'binary'
     });
 
-    return new Blob([new Uint8Array(encrypted as Uint8Array)], { type: 'application/octet-stream' });
+    return new Blob([new Uint8Array(encrypted as ArrayBuffer)], { type: 'application/octet-stream' });
   }
 
   async decryptFile(encryptedBlob: Blob, privateKeyArmored: string, passphrase: string): Promise<{ data: Blob; filename: string }> {
-    const privateKey = await openpgp.decryptKey({
-      privateKey: await openpgp.readPrivateKey({ armoredKey: privateKeyArmored }),
-      passphrase
-    });
+    let privateKey = await openpgp.readPrivateKey({ armoredKey: privateKeyArmored });
+    
+    if (passphrase) {
+      privateKey = await openpgp.decryptKey({ privateKey, passphrase });
+    }
 
     const encryptedBuffer = await encryptedBlob.arrayBuffer();
     const message = await openpgp.readMessage({ binaryMessage: new Uint8Array(encryptedBuffer) });
     
     const { data: decrypted, filename: originalFilename } = await openpgp.decrypt({
       message,
-      decryptionKeys: privateKey,
+      decryptionKeys: [privateKey],
       format: 'binary'
     });
 
     return {
-      data: new Blob([new Uint8Array(decrypted as Uint8Array)]),
+      data: new Blob([new Uint8Array(decrypted as ArrayBuffer)]),
       filename: originalFilename || 'decrypted_file'
     };
   }
