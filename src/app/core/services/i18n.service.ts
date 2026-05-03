@@ -27,7 +27,11 @@ const translations: Record<string, Record<string, unknown>> = {
       clear: 'Limpar', cancel: 'Cancelar', confirm: 'Confirmar', 
       success: 'Sucesso', error: 'Erro', warning: 'Aviso', info: 'Informação', 
       copied: 'Copiado!', processing: 'Processando...', language: 'Idioma', 
-      downloaded: 'Baixado!'
+      downloaded: 'Baixado!',
+      errorOccurred: 'Erro'
+    },
+    fingerprint: {
+      title: 'Fingerprint'
     },
     about: {
       title: 'Sobre o PGP Web Lab',
@@ -68,8 +72,23 @@ const translations: Record<string, Record<string, unknown>> = {
         download: 'Baixar',
         copyPublic: 'Copiar Pública', 
         copyPrivate: 'Copiar Privada',
-        success: 'Chaves geradas com sucesso!'
+        success: 'Chaves geradas com sucesso!',
+        warningPrivate: '⚠️ Nunca compartilhe sua chave privada!',
+        newPair: 'Gerar Novo Par de Chaves'
+      },
+      stored: {
+        fingerprint: 'Impressão Digital',
+        remove: 'Remover'
+      },
+      card: {
+        unknown: 'Desconhecido',
+        public: 'Pública',
+        private: 'Privada'
       }
+    },
+    footer: {
+      processing: 'Todo processamento ocorre localmente no seu navegador. Nenhuma chave é enviada a servidores.',
+      copyright: 'PGP Web Lab © 2026'
     },
     message: {
       encrypt: { 
@@ -99,6 +118,13 @@ const translations: Record<string, Record<string, unknown>> = {
       }
     },
     file: {
+      input: {
+        placeholder: 'Clique ou arraste arquivo de chave (.asc, .gpg, .pgp)',
+        maxSize: 'Máximo 100KB'
+      },
+      drop: {
+        placeholder: 'Arraste um arquivo aqui ou clique para selecionar'
+      },
       encrypt: { 
         title: 'Criptografar Arquivo', 
         subtitle: 'Cifre um arquivo usando a chave pública do destinatário',
@@ -162,7 +188,11 @@ const translations: Record<string, Record<string, unknown>> = {
       clear: 'Clear', cancel: 'Cancel', confirm: 'Confirm', 
       success: 'Success', error: 'Error', warning: 'Warning', info: 'Information', 
       copied: 'Copied!', processing: 'Processing...', language: 'Language', 
-      downloaded: 'Downloaded!'
+      downloaded: 'Downloaded!',
+      errorOccurred: 'Error'
+    },
+    fingerprint: {
+      title: 'Fingerprint'
     },
     about: {
       title: 'About PGP Web Lab',
@@ -203,8 +233,23 @@ const translations: Record<string, Record<string, unknown>> = {
         download: 'Download',
         copyPublic: 'Copy Public', 
         copyPrivate: 'Copy Private',
-        success: 'Keys generated successfully!'
+        success: 'Keys generated successfully!',
+        warningPrivate: '⚠️ Never share your private key!',
+        newPair: 'Generate New Key Pair'
+      },
+      stored: {
+        fingerprint: 'Fingerprint',
+        remove: 'Remove'
+      },
+      card: {
+        unknown: 'Unknown',
+        public: 'Public',
+        private: 'Private'
       }
+    },
+    footer: {
+      processing: 'All processing occurs locally in your browser. No keys are sent to servers.',
+      copyright: 'PGP Web Lab © 2026'
     },
     message: {
       encrypt: { 
@@ -234,6 +279,13 @@ const translations: Record<string, Record<string, unknown>> = {
       }
     },
     file: {
+      input: {
+        placeholder: 'Click or drag key file (.asc, .gpg, .pgp)',
+        maxSize: 'Maximum 100KB'
+      },
+      drop: {
+        placeholder: 'Drag a file here or click to select'
+      },
       encrypt: { 
         title: 'Encrypt File', 
         subtitle: 'Encrypt a file using the recipients public key',
@@ -256,7 +308,7 @@ const translations: Record<string, Record<string, unknown>> = {
         selectFile: 'Select Encrypted File', 
         dropEncrypted: 'Drag the .pgp file here or click to select', 
         privateKey: 'Your Private Key', 
-        privateKeyPlaceholder: 'Paste or import your PGP private key', 
+        privateKeyPlaceholder: 'Paste or import your PGP private key',
         usePassphrase: 'My key has password',
         passphrase: 'Password', 
         passphrasePlaceholder: 'Enter your password', 
@@ -297,7 +349,11 @@ const translations: Record<string, Record<string, unknown>> = {
       clear: 'Limpiar', cancel: 'Cancelar', confirm: 'Confirmar', 
       success: 'Éxito', error: 'Error', warning: 'Advertencia', info: 'Información', 
       copied: '¡Copiado!', processing: 'Procesando...', language: 'Idioma', 
-      downloaded: '¡Descargado!'
+      downloaded: '¡Descargado!',
+      errorOccurred: 'Error'
+    },
+    fingerprint: {
+      title: 'Fingerprint'
     },
     about: {
       title: 'Acerca de PGP Web Lab',
@@ -333,13 +389,28 @@ const translations: Record<string, Record<string, unknown>> = {
         generateButton: 'Generar Claves',
         publicKey: 'Clave Pública', 
         privateKey: 'Clave Privada', 
-        fingerprint: 'Huella Digital', 
+        fingerprint: 'Fingerprint', 
         fingerprintHint: 'Compara con el destinatario por canal confiable', 
         download: 'Descargar',
         copyPublic: 'Copiar Pública', 
         copyPrivate: 'Copiar Privada',
-        success: '¡Claves generadas exitosamente!'
+        success: '¡Claves generadas exitosamente!',
+        warningPrivate: '⚠️ ¡Nunca compartas tu clave privada!',
+        newPair: 'Generar Nuevo Par de Claves'
+      },
+      stored: {
+        fingerprint: 'Fingerprint',
+        remove: 'Eliminar'
+      },
+      card: {
+        unknown: 'Desconocido',
+        public: 'Pública',
+        private: 'Privada'
       }
+    },
+    footer: {
+      processing: 'Todo el procesamiento ocurre localmente en tu navegador. Ninguna clave se envía a servidores.',
+      copyright: 'PGP Web Lab © 2026'
     },
     message: {
       encrypt: { 
@@ -369,6 +440,13 @@ const translations: Record<string, Record<string, unknown>> = {
       }
     },
     file: {
+      input: {
+        placeholder: 'Haz clic o arrastra archivo de clave (.asc, .gpg, .pgp)',
+        maxSize: 'Máximo 100KB'
+      },
+      drop: {
+        placeholder: 'Arrastra un archivo aquí o haz clic para seleccionar'
+      },
       encrypt: { 
         title: 'Cifrar Archivo', 
         subtitle: 'Cifra un archivo usando la clave pública del destinatario',
