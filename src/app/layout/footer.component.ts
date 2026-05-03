@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { I18nService } from '../core/services/i18n.service';
 
 @Component({
   selector: 'app-footer',
@@ -10,11 +11,11 @@ import { Component } from '@angular/core';
           <div class="col-md-6">
             <p class="text-muted mb-0 small">
               <i class="bi bi-shield-check me-1"></i>
-              Todo processamento ocorre localmente no seu navegador. Nenhuma chave é enviada a servidores.
+              {{ t('footer.processing') }}
             </p>
           </div>
           <div class="col-md-6 text-md-end">
-            <span class="text-muted small">PGP Web Lab &copy; 2026</span>
+            <span class="text-muted small">{{ t('footer.copyright') }}</span>
           </div>
         </div>
       </div>
@@ -24,4 +25,7 @@ import { Component } from '@angular/core';
     footer { margin-top: auto; }
   `]
 })
-export class FooterComponent {}
+export class FooterComponent {
+  private i18n = inject(I18nService);
+  get t() { return (key: string) => this.i18n.t(key); }
+}

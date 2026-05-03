@@ -131,7 +131,7 @@ export class DecryptMessageComponent {
       this.state.setSuccess(decrypted);
       this.toast.success(this.t('message.decrypt.success'));
     } catch (err) {
-      this.state.setError(err instanceof Error ? err.message : 'Erro');
+      this.state.setError(err instanceof Error ? err.message : this.i18n.t('common.errorOccurred'));
       this.toast.error(this.t('common.error'));
     }
   }

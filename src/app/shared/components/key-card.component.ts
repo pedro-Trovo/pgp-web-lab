@@ -10,10 +10,10 @@ import { FingerprintFormatPipe } from '../pipes/fingerprint-format.pipe';
     <div class="key-card">
       <div class="d-flex justify-content-between align-items-start mb-3">
         <div>
-          <h5 class="mb-1">{{ key().name || 'Unknown' }}</h5>
+          <h5 class="mb-1">{{ key().name || t('key.card.unknown') }}</h5>
           <p class="text-muted mb-0 small">{{ key().email }}</p>
         </div>
-        <span class="badge bg-secondary badge-key">{{ key().type === 'public' ? 'Pública' : 'Privada' }}</span>
+        <span class="badge bg-secondary badge-key">{{ key().type === 'public' ? t('key.card.public') : t('key.card.private') }}</span>
       </div>
       
       @if (key().fingerprint) {

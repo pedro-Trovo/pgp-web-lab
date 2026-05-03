@@ -18,8 +18,8 @@ import { I18nService } from '../../core/services/i18n.service';
         @if (!keyContent()) {
           <div class="text-center" (click)="fileInput.click()" (dragover)="onDragOver($event)" (dragleave)="onDragLeave()" (drop)="onDrop($event)">
             <i class="bi bi-key fs-2 d-block mb-2 text-muted"></i>
-            <span class="text-muted">{{ placeholder() }}</span>
-            <small class="d-block text-muted mt-1" style="font-size: 0.75rem;">{{ hint() }}</small>
+            <span class="text-muted">{{ placeholder() || t('file.input.placeholder') }}</span>
+            <small class="d-block text-muted mt-1" style="font-size: 0.75rem;">{{ hint() || t('file.input.maxSize') }}</small>
           </div>
         } @else {
           <div class="d-flex align-items-center justify-content-between">
@@ -68,8 +68,8 @@ import { I18nService } from '../../core/services/i18n.service';
 export class KeyFileInputComponent {
   private i18n = inject(I18nService);
 
-  placeholder = input('Clique ou arraste arquivo de chave (.asc, .gpg, .pgp)');
-  hint = input('Máximo 100KB');
+  placeholder = input('');
+  hint = input('');
   maxSize = input(100 * 1024);
 
   keyChange = output<string>();

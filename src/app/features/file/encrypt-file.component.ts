@@ -121,7 +121,7 @@ export class EncryptFileComponent {
       this.state.setSuccess({ filename: this.selectedFile()!.name });
       this.toast.success(this.t('file.encrypt.success'));
     } catch (err) {
-      this.state.setError(err instanceof Error ? err.message : 'Erro');
+      this.state.setError(err instanceof Error ? err.message : this.i18n.t('common.errorOccurred'));
       this.toast.error(this.t('common.error'));
     }
   }

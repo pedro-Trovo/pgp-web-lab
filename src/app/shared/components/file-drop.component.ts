@@ -27,7 +27,7 @@ import { FileSizePipe } from '../pipes/file-size.pipe';
       @if (!selectedFile()) {
         <div class="text-muted">
           <i class="bi bi-cloud-arrow-up fs-1 d-block mb-2"></i>
-          <span>{{ placeholder() }}</span>
+          <span>{{ placeholder() || t('file.drop.placeholder') }}</span>
         </div>
       } @else {
         <div class="text-start">
@@ -60,7 +60,7 @@ export class FileDropComponent {
   @ViewChild('dropZone') dropZone!: ElementRef;
   @ViewChild('fileInput') fileInput!: ElementRef;
 
-  placeholder = input('Arraste um arquivo aqui ou clique para selecionar');
+  placeholder = input('');
   accept = input('*/*');
   hint = input('');
   maxSize = input(10 * 1024 * 1024);

@@ -104,14 +104,14 @@ interface GeneratedKeys {
                     <i class="bi bi-download me-1"></i>{{ t('key.generate.download') }}
                   </button>
                 </div>
-                <small class="text-warning d-block mt-2">⚠️ Nunca compartilhe sua chave privada!</small>
+                <small class="text-warning d-block mt-2">{{ t('key.generate.warningPrivate') }}</small>
               </div>
             </div>
           </div>
 
           <div class="text-center mt-4">
             <button class="btn btn-outline-secondary" (click)="reset()">
-              <i class="bi bi-plus-circle me-1"></i> Gerar Novo Par de Chaves
+              <i class="bi bi-plus-circle me-1"></i> {{ t('key.generate.newPair') }}
             </button>
           </div>
         </div>
@@ -161,7 +161,7 @@ export class KeyGenerationComponent {
       this.state.setSuccess(result);
       this.toast.success(this.t('key.generate.success'));
     } catch (err) {
-      const message = err instanceof Error ? err.message : 'Erro ao gerar chaves';
+      const message = err instanceof Error ? err.message : this.i18n.t('common.errorOccurred');
       this.state.setError(message);
       this.toast.error(message);
     }

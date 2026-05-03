@@ -10,7 +10,7 @@ import { FingerprintFormatPipe } from '../pipes/fingerprint-format.pipe';
   template: `
     <div class="fingerprint-display">
       <div class="d-flex justify-content-between align-items-center mb-2">
-        <small class="text-muted fw-medium">Fingerprint</small>
+        <small class="text-muted fw-medium">{{ t('fingerprint.title') }}</small>
         <div class="btn-group btn-group-sm">
           <button class="btn btn-outline-secondary" (click)="copyFingerprint()">
             <i class="bi bi-copy"></i>
